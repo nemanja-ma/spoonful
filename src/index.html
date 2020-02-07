@@ -5,28 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
 
-   <!--- <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon"> -->
     <title>Spoonful | recipe DB</title>
 </head>
 
 <body>
+    
     <div class="d-none d-sm-block"></div>
 
     <div class="container mt-0 mt-5 nav-container">
         <nav class="row navbar navbar-light bg-light" >
             <a class="navbar-brand col-sm-2 ">Spoonful</a>
-            <form class="form-inline col-sm-6  justify-content-center">
+            <form class="form-inline col-sm-6 justify-content-center search">
                 <div class="container ">
                     <div class="row ">
-                        <input class="form-control col-9 col-sm-7 offset-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-secondary col-3 col-sm-3" type="submit">Search</button>
+                        <input class="form-control col-9 col-sm-7 offset-sm-2 search__field" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-secondary col-3 col-sm-3 my-2 my-sm-0 search__button" type="submit">Search</button>
                     </div>
                 </div>
             </form>
@@ -34,414 +32,158 @@
         </nav>
     </div>
 
-    <div class="container bg-light mt-3">
-        <div class="row bg-light " >
+    <div class="container bg-light mt-3 mb-3 container_main">
+        <div class="row bg-light">
 
-            <div class="col-12 col-sm-4 p-2 results container_main" id="results">
+            <div class="col-12 col-sm-4 p-2 border">
                 <div class="list-group">
-                    <div class="container container-result pb-0 pt-0 pr-0 pl-0 border">   
-                        
-                        <a href="#" class="results__link list-group-item list-group-item-action" >
-                            <div class="row align-items-center row-result">
-                                <div class="col-12 col-sm-3 p-0 m-0">
-                                    <figure class="results__fig">
-                                        <img src="./img/test-1.jpg" alt="test">
-                                    </figure>
-                                </div>
-                                <div class="col-12 col-sm-9 p-2 ml-0 results__data">
-                                    <h4 class="results__name">PASTA WITH TOMATO CREAM SAUCE</h4>
-                                    <div class="recipe__info">
-                                        <div class="recipe__info__in">
-                                            <i class="fa fa-hourglass"></i>
-                                            <span class="recipe__info-data recipe__info-data--minutes">45</span>
-                                            <span class="recipe__info-text"> min</span>
-                                        </div>
-                                        <div class="recipe__info__in">
-                                            <i class="fa fa-user"></i>
-                                            <span class="recipe__info-data recipe__info-data--people">4</span>
-                                            <span class="recipe__info-text"> person</span>
-                                        </div>
-                                        <div class="recipe__info__in ">
-                                            <i class="fa fa-leaf"></i>
+                    <div class="container p-0 container-result"> 
+                        <div class="results__list results"> 
+                            <!--
+                            <a href="#" class="results__link list-group-item list-group-item-action" > 
+                                <div class="row align-items-center row-result">
+                                    <div class="col-12 col-sm-3 p-0 m-0">
+                                        <figure class="results__fig">
+                                            <img src="./img/test-1.jpg" alt="test">
+                                        </figure>
+                                    </div>
+                                    <div class="col-12 col-sm-9 p-2 ml-0 results__data">
+                                        <h4 class="results__name">PASTA WITH TOMATO CREAM SAUCE</h4>
+                                        <div class="recipe__info">
+                                            <div class="recipe__info__in">
+                                                <i class="fa fa-hourglass"></i>
+                                                <span class="recipe__info-data recipe__info-data--minutes">45</span>
+                                                <span class="recipe__info-text"> min</span>
+                                            </div>
+                                            <div class="recipe__info__in">
+                                                <i class="fa fa-user"></i>
+                                                <span class="recipe__info-data recipe__info-data--people">4</span>
+                                                <span class="recipe__info-text"> person</span>
+                                            </div>
+                                            <div class="recipe__info__in ">
+                                                <i class="fa fa-leaf"></i>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
-                        <!--
-                        <a href="#" class="results__link list-group-item list-group-item-action" >
-                            <div class="row align-items-center row-result">
-                                <div class="col-12 col-sm-3 p-0 m-0">
-                                    <figure class="results__fig">
-                                        <img src="./img/test-1.jpg" alt="test">
-                                    </figure>
-                                </div>
-                                <div class="col-12 col-sm-9 p-2 ml-0 results__data">
-                                    <h4 class="results__name">PASTA WITH TOMATO CREAM SAUCE</h4>
-                                    <div class="recipe__info">
-                                        <div class="recipe__info__in">
-                                            <i class="fa fa-hourglass"></i>
-                                            <span class="recipe__info-data recipe__info-data--minutes">45</span>
-                                            <span class="recipe__info-text"> min</span>
-                                        </div>
-                                        <div class="recipe__info__in">
-                                            <i class="fa fa-user"></i>
-                                            <span class="recipe__info-data recipe__info-data--people">4</span>
-                                            <span class="recipe__info-text"> person</span>
-                                        </div>
-                                        <div class="recipe__info__in ">
-                                            <i class="fa fa-leaf"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-
-                        <a href="#" class="results__link list-group-item list-group-item-action" >
-                            <div class="row align-items-center row-result">
-                                <div class="col-12 col-sm-3 p-0 m-0">
-                                    <figure class="results__fig">
-                                        <img src="./img/test-1.jpg" alt="test">
-                                    </figure>
-                                </div>
-                                <div class="col-12 col-sm-9 p-2 ml-0 results__data">
-                                    <h4 class="results__name">PASTA WITH TOMATO CREAM SAUCE</h4>
-                                    <div class="recipe__info">
-                                        <div class="recipe__info__in">
-                                            <i class="fa fa-hourglass"></i>
-                                            <span class="recipe__info-data recipe__info-data--minutes">45</span>
-                                            <span class="recipe__info-text"> min</span>
-                                        </div>
-                                        <div class="recipe__info__in">
-                                            <i class="fa fa-user"></i>
-                                            <span class="recipe__info-data recipe__info-data--people">4</span>
-                                            <span class="recipe__info-text"> person</span>
-                                        </div>
-                                        <div class="recipe__info__in ">
-                                            <i class="fa fa-leaf"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#" class="results__link list-group-item list-group-item-action" >
-                            <div class="row align-items-center row-result">
-                                <div class="col-12 col-sm-3 p-0 m-0">
-                                    <figure class="results__fig">
-                                        <img src="./img/test-1.jpg" alt="test">
-                                    </figure>
-                                </div>
-                                <div class="col-12 col-sm-9 p-2 ml-0 results__data">
-                                    <h4 class="results__name">PASTA WITH TOMATO CREAM SAUCE</h4>
-                                    <div class="recipe__info">
-                                        <div class="recipe__info__in">
-                                            <i class="fa fa-hourglass"></i>
-                                            <span class="recipe__info-data recipe__info-data--minutes">45</span>
-                                            <span class="recipe__info-text"> min</span>
-                                        </div>
-                                        <div class="recipe__info__in">
-                                            <i class="fa fa-user"></i>
-                                            <span class="recipe__info-data recipe__info-data--people">4</span>
-                                            <span class="recipe__info-text"> person</span>
-                                        </div>
-                                        <div class="recipe__info__in ">
-                                            <i class="fa fa-leaf"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#" class="results__link list-group-item list-group-item-action" >
-                            <div class="row align-items-center row-result">
-                                <div class="col-12 col-sm-3 p-0 m-0">
-                                    <figure class="results__fig">
-                                        <img src="./img/test-1.jpg" alt="test">
-                                    </figure>
-                                </div>
-                                <div class="col-12 col-sm-9 p-2 ml-0 results__data">
-                                    <h4 class="results__name">PASTA WITH TOMATO CREAM SAUCE</h4>
-                                    <div class="recipe__info">
-                                        <div class="recipe__info__in">
-                                            <i class="fa fa-hourglass"></i>
-                                            <span class="recipe__info-data recipe__info-data--minutes">45</span>
-                                            <span class="recipe__info-text"> min</span>
-                                        </div>
-                                        <div class="recipe__info__in">
-                                            <i class="fa fa-user"></i>
-                                            <span class="recipe__info-data recipe__info-data--people">4</span>
-                                            <span class="recipe__info-text"> person</span>
-                                        </div>
-                                        <div class="recipe__info__in ">
-                                            <i class="fa fa-leaf"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#" class="results__link list-group-item list-group-item-action" >
-                            <div class="row align-items-center row-result">
-                                <div class="col-12 col-sm-3 p-0 m-0">
-                                    <figure class="results__fig">
-                                        <img src="./img/test-1.jpg" alt="test">
-                                    </figure>
-                                </div>
-                                <div class="col-12 col-sm-9 p-2 ml-0 results__data">
-                                    <h4 class="results__name">PASTA WITH TOMATO CREAM SAUCE</h4>
-                                    <div class="recipe__info">
-                                        <div class="recipe__info__in">
-                                            <i class="fa fa-hourglass"></i>
-                                            <span class="recipe__info-data recipe__info-data--minutes">45</span>
-                                            <span class="recipe__info-text"> min</span>
-                                        </div>
-                                        <div class="recipe__info__in">
-                                            <i class="fa fa-user"></i>
-                                            <span class="recipe__info-data recipe__info-data--people">4</span>
-                                            <span class="recipe__info-text"> person</span>
-                                        </div>
-                                        <div class="recipe__info__in ">
-                                            <i class="fa fa-leaf"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#" class="results__link list-group-item list-group-item-action" >
-                            <div class="row align-items-center row-result">
-                                <div class="col-12 col-sm-3 p-0 m-0">
-                                    <figure class="results__fig">
-                                        <img src="./img/test-1.jpg" alt="test">
-                                    </figure>
-                                </div>
-                                <div class="col-12 col-sm-9 p-2 ml-0 results__data">
-                                    <h4 class="results__name">PASTA WITH TOMATO CREAM SAUCE</h4>
-                                    <div class="recipe__info">
-                                        <div class="recipe__info__in">
-                                            <i class="fa fa-hourglass"></i>
-                                            <span class="recipe__info-data recipe__info-data--minutes">45</span>
-                                            <span class="recipe__info-text"> min</span>
-                                        </div>
-                                        <div class="recipe__info__in">
-                                            <i class="fa fa-user"></i>
-                                            <span class="recipe__info-data recipe__info-data--people">4</span>
-                                            <span class="recipe__info-text"> person</span>
-                                        </div>
-                                        <div class="recipe__info__in ">
-                                            <i class="fa fa-leaf"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#" class="results__link list-group-item list-group-item-action" >
-                            <div class="row align-items-center row-result">
-                                <div class="col-12 col-sm-3 p-0 m-0">
-                                    <figure class="results__fig">
-                                        <img src="./img/test-1.jpg" alt="test">
-                                    </figure>
-                                </div>
-                                <div class="col-12 col-sm-9 p-2 ml-0 results__data">
-                                    <h4 class="results__name">PASTA WITH TOMATO CREAM SAUCE</h4>
-                                    <div class="recipe__info">
-                                        <div class="recipe__info__in">
-                                            <i class="fa fa-hourglass"></i>
-                                            <span class="recipe__info-data recipe__info-data--minutes">45</span>
-                                            <span class="recipe__info-text"> min</span>
-                                        </div>
-                                        <div class="recipe__info__in">
-                                            <i class="fa fa-user"></i>
-                                            <span class="recipe__info-data recipe__info-data--people">4</span>
-                                            <span class="recipe__info-text"> person</span>
-                                        </div>
-                                        <div class="recipe__info__in ">
-                                            <i class="fa fa-leaf"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#" class="results__link list-group-item list-group-item-action" >
-                            <div class="row align-items-center row-result">
-                                <div class="col-12 col-sm-3 p-0 m-0">
-                                    <figure class="results__fig">
-                                        <img src="./img/test-1.jpg" alt="test">
-                                    </figure>
-                                </div>
-                                <div class="col-12 col-sm-9 p-2 ml-0 results__data">
-                                    <h4 class="results__name">PASTA WITH TOMATO CREAM SAUCE</h4>
-                                    <div class="recipe__info">
-                                        <div class="recipe__info__in">
-                                            <i class="fa fa-hourglass"></i>
-                                            <span class="recipe__info-data recipe__info-data--minutes">45</span>
-                                            <span class="recipe__info-text"> min</span>
-                                        </div>
-                                        <div class="recipe__info__in">
-                                            <i class="fa fa-user"></i>
-                                            <span class="recipe__info-data recipe__info-data--people">4</span>
-                                            <span class="recipe__info-text"> person</span>
-                                        </div>
-                                        <div class="recipe__info__in ">
-                                            <i class="fa fa-leaf"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#" class="results__link list-group-item list-group-item-action" >
-                            <div class="row align-items-center row-result">
-                                <div class="col-12 col-sm-3 p-0 m-0">
-                                    <figure class="results__fig">
-                                        <img src="./img/test-1.jpg" alt="test">
-                                    </figure>
-                                </div>
-                                <div class="col-12 col-sm-9 p-2 ml-0 results__data">
-                                    <h4 class="results__name">PASTA WITH TOMATO CREAM SAUCE</h4>
-                                    <div class="recipe__info">
-                                        <div class="recipe__info__in">
-                                            <i class="fa fa-hourglass"></i>
-                                            <span class="recipe__info-data recipe__info-data--minutes">45</span>
-                                            <span class="recipe__info-text"> min</span>
-                                        </div>
-                                        <div class="recipe__info__in">
-                                            <i class="fa fa-user"></i>
-                                            <span class="recipe__info-data recipe__info-data--people">4</span>
-                                            <span class="recipe__info-text"> person</span>
-                                        </div>
-                                        <div class="recipe__info__in ">
-                                            <i class="fa fa-leaf"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a> -->
+                            </a>
+                            -->
+                        </div> 
                     </div>
-                    <div class="container">
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-5 p-2 border">
+                <div class="recipe">
+                    <!--
+                    <figure class="recipe__fig">
+                        <img class="recipe__img" src="./img/test-1.jpg" alt="test">
+                        <h2 class="recipe__title"><span>Pasta with tomato cream sauce</span></h2>
+                    </figure>
+                    <div class="container container-recipe">
                         <div class="row">
-                            <div class="col-12">
-                                <nav aria-label="Search results pages">
-                                    <ul class="pagination">
-                                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                            <div class="col-12 col-sm-12">
+                                <div class="recipe__ingredients">
+                                    <ul class="recipe__ingredient-list">
+                                        <li class="recipe__item">
+                                            <i class="fa fa-check"></i>
+                                            <div class="recipe__count">1000</div>
+                                            <div class="recipe__ingredient">
+                                                <span class="recipe__unit">teaspoon </span>
+                                                baking powder
+                                            </div>
+                                        </li>
                                     </ul>
-                                </nav>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div class="container pt-3 pb-3 pl-0 pr-0">
+                        <div class="row pl-3 pr-3 recipe__details">
+                            <div class="col-3 col-sm-3 p-1">
+                                <div class="recipe__info recipe__info__recipe text-align-center">
+                                    <a class="btn-tiny recipe__info-buttons"> <i class="fa fa-minus"></i> </a>
+                                    <a class="btn-tiny recipe__info-buttons" style="  margin-left: 1rem;"> <i class="fa fa-plus"></i> </a>
+                                </div>
+                            </div>
+                            <div class="col-3 col-sm-3 p-1">
+                                <button class="btn btn-outline-danger btn-block recipe__love">
+                                    <i class="fa fa-heart"></i>
+                                </button>
+                            </div>
+                            <div class="col-3 col-sm-3 p-1">
+                                <button class="btn btn-outline-secondary btn-block recipe__love" href="http://thepioneerwoman.com/cooking/pasta-with-tomato-cream-sauce/" target="_blank">
+                                    <i class="fa fa-info"></i>
+                                </button>
+
+                            </div>
+                            <div class="col-3 col-sm-3 p-1">
+                                <button class="btn btn-outline-success btn-block recipe__btn">
+                                    <i class="fa fa-caret-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row description ">
+                            <div class="col-4 col-sm-3 d-none d-sm-block">
+                                <span>4 Servings</span>
+                            </div>
+                            <div class="col-3 col-sm-3 d-none d-sm-block">
+                                <span>Add to Favorits</span>
+                            </div>
+                            <div class="col-3 col-sm-3 d-none d-sm-block">
+                                <span>More Info</span>
+                            </div>
+                            <div class="col-2 col-sm-3 d-none d-sm-block">
+                                <span>Add to the list</span>
+                            </div>
+                        </div>
+                    </div>
+                    -->
                 </div>
             </div>
+            
 
-            <div class="col-12 col-sm-5 p-2 recipe">
-                <figure class="recipe__fig">
-                    <img class="recipe__img" src="./img/test-1.jpg" alt="test">
-                    <h2 class="recipe__title"><span>Pasta with tomato cream sauce</span></h2>
-                </figure>
-                
-                <div class="container container-recipe">
-                    <div class="row">
-                        <div class="col-12 col-sm-12">
-                            <div class="recipe__ingredients">
-                                <ul class="recipe__ingredient-list">
-                                    <li class="recipe__item">
-                                        <i class="fa fa-check"></i>
-                                        <div class="recipe__count">1000</div>
-                                        <div class="recipe__ingredient">
-                                            <span class="recipe__unit">teaspoon </span>
-                                            baking powder
-                                        </div>
-                                    </li>
-                                    <li class="recipe__item">
-                                        <i class="fa fa-check"></i>
-                                        <div class="recipe__count">1000</div>
-                                        <div class="recipe__ingredient">
-                                            <span class="recipe__unit">teaspoon </span>
-                                            baking powder
-                                        </div>
-                                    </li>
-                                    <li class="recipe__item">
-                                        <i class="fa fa-check"></i>
-                                        <div class="recipe__count">1000</div>
-                                        <div class="recipe__ingredient">
-                                            <span class="recipe__unit">teaspoon </span>
-                                            baking powder
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="container pt-3 pb-3 pl-0 pr-0">
-                    <div class="row pl-3 pr-3 recipe__details">
-                        <div class="col-3 col-sm-3 p-1">
-                            <div class="recipe__info recipe__info__recipe text-align-center">
-                                <a class="btn-tiny recipe__info-buttons"> <i class="fa fa-minus"></i> </a>
-                                <a class="btn-tiny recipe__info-buttons" style="  margin-left: 1rem;"> <i class="fa fa-plus"></i> </a>
-                            </div>
-                        </div>
-                        <div class="col-3 col-sm-3 p-1">
-                            <button class="btn btn-outline-danger btn-block recipe__love">
-                                <i class="fa fa-heart"></i>
-                            </button>
-                        </div>
-                        <div class="col-3 col-sm-3 p-1">
-                            <button class="btn btn-outline-secondary btn-block recipe__love" href="http://thepioneerwoman.com/cooking/pasta-with-tomato-cream-sauce/" target="_blank">
-                                <i class="fa fa-info"></i>
-                            </button>
-
-                        </div>
-                        <div class="col-3 col-sm-3 p-1">
-                            <button class="btn btn-outline-success btn-block recipe__btn">
-                                <i class="fa fa-caret-right"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="row description ">
-                        <div class="col-4 col-sm-3 d-none d-sm-block">
-                            <span>4 Servings</span>
-                        </div>
-                        <div class="col-3 col-sm-3 d-none d-sm-block">
-                            <span>Add to Favorits</span>
-                        </div>
-                        <div class="col-3 col-sm-3 d-none d-sm-block">
-                            <span>More Info</span>
-                        </div>
-                        <div class="col-2 col-sm-3 d-none d-sm-block">
-                            <span>Add to the list</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-12 col-sm-3 p-2 shopping">
+            <div class="col-12 col-sm-3 p-2 border">
                 <h2 class="heading-2">Shopping List</h2>
-                <ul class="list-group shopping__list ">
-
-                    <li class="list-group-item shopping__item ">
-                        <div class="container list_paddzero">
-                            <div class="row list_paddzero  align-items-center">
-                                <div class="col-5 col-sm-5 shpping__count list_paddzero">
-                                    <input type="number" value="500" step="100"><span> g</span>
-                                </div>
-                                <div class="col-5 col-sm-6 list_paddzero">
-                                    <p class="shopping__description ">Pasta</p>
-                                </div>
-                                <div class="col-1 col-sm-1 list_paddzero justify-content-right">
-                                    <a href="#" class="shopping__delete btn-tiny"><i class="fa fa-times-circle"></i></a>
+                <ul class="list-group">
+                    <div class="shopping__list shopping">
+                        <!--
+                        <li class="list-group-item shopping__item ">
+                            <div class="container list_paddzero">
+                                <div class="row list_paddzero  align-items-center">
+                                    <div class="col-5 col-sm-5 shpping__count list_paddzero">
+                                        <input type="number" value="500" step="100"><span> g</span>
+                                    </div>
+                                    <div class="col-5 col-sm-6 list_paddzero">
+                                        <p class="shopping__description ">Pasta</p>
+                                    </div>
+                                    <div class="col-1 col-sm-1 list_paddzero justify-content-right">
+                                        <a href="#" class="shopping__delete btn-tiny"><i class="fa fa-times-circle"></i></a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </li>
-
+                        </li>
+                        -->
+                    </div>
                 </ul>
             </div>
         </div>    
     </div>
+    <footer>
+        <div class="container bg-light">
+            <div class="row justify-content-center">
+                <div class="clas">
+                    <section class="copyrightSection">
+                        <div class="col-12 text-center">
+                          <p>&copy; Copyright Nemanja Markovic 2019</p>
+                        </div>
+                      </section>
+                </div>
+            </div>
+        </div>
+        
+    </footer>
 
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

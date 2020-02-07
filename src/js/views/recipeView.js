@@ -6,98 +6,76 @@ export const clearRecipe = () => {
 
 let createIngredient = ingredient => `
     <li class="recipe__item">
-        <svg class="recipe__icon">
-            <use href="img/icons.svg#icon-check"></use>
-        </svg>
+        <i class="fa fa-check"></i>
         <div class="recipe__count">${ingredient.amount}</div>
         <div class="recipe__ingredient">
-        <span class="recipe__unit">${ingredient.unit}</span>
-        ${ingredient.name}
-        </div> 
+            <span class="recipe__unit">${ingredient.unit} </span>
+            ${ingredient.name}
+        </div>
     </li>
-    `;   
+    `; 
 
-export const renderRecipe = (recipe, isLiked) => {
+export const renderRecipe = (recipe) => {
     const markap = `
-            <figure class="recipe__fig">
-                <img src="${recipe.img}" alt="${recipe.title}">
-                <h1 class="recipe__title">
-                    <span>${recipe.title}</span>
-                </h1>
-            </figure>
-            <div class="recipe__details">
-                <div class="recipe__info">
-                    <svg class="recipe__info-icon">
-                        <use href="img/icons.svg#icon-stopwatch"></use>
-                    </svg>
-                    <span class="recipe__info-data recipe__info-data--minutes">${recipe.time}</span>
-                    <span class="recipe__info-text"> minutes</span>
-                </div>
-                <div class="recipe__info">
-                    <svg class="recipe__info-icon">
-                        <use href="img/icons.svg#icon-man"></use>
-                    </svg>
-                    <span class="recipe__info-data recipe__info-data--people">${recipe.servings}</span>
-                    <span class="recipe__info-text"> servings </span>
+        <figure class="recipe__fig">
+            <img class="recipe__img" src="${recipe.img}" alt="${recipe.title}">
+            <h2 class="recipe__title"><span>${recipe.title}</span></h2>
+        </figure>
 
-                    <div class="recipe__info-buttons">
-                        <button class="btn-tiny btn-decrease">
-                            <svg>
-                                <use href="img/icons.svg#icon-circle-with-minus"></use>
-                            </svg>
-                        </button>
-                        <button class="btn-tiny btn-increase">
-                            <svg>
-                                <use href="img/icons.svg#icon-circle-with-plus"></use>
-                            </svg>
-                        </button>
+        <div class="container container-recipe">
+            <div class="row">
+                <div class="col-12 col-sm-12">
+                    <div class="recipe__ingredients">
+                        <ul class="recipe__ingredient-list">
+                            ${recipe.ingredients.map(el => createIngredient(el)).join('')}
+                        </ul>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container pt-3 pb-3 pl-0 pr-0">
+            <div class="row pl-3 pr-3 recipe__details">
+                <div class="col-3 col-sm-3 p-1">
+                    <div class="recipe__info recipe__info__recipe text-align-center">
+                        <a class="btn-tiny recipe__info-buttons"> <i class="fa fa-minus"></i> </a>
+                        <a class="btn-tiny recipe__info-buttons" style="  margin-left: 1rem;"> <i class="fa fa-plus"></i> </a>
+                    </div>
+                </div>
+                <div class="col-3 col-sm-3 p-1">
+                    <button class="btn btn-outline-danger btn-block recipe__love">
+                        <i class="fa fa-heart"></i>
+                    </button>
+                </div>
+                <div class="col-3 col-sm-3 p-1">
+                    <button class="btn btn-outline-secondary btn-block recipe__love" href="${recipe.url}" target="_blank">
+                        <i class="fa fa-info"></i>
+                    </button>
 
                 </div>
-                <button class="recipe__love">
-                    <svg class="header__likes">
-                        <use href="img/icons.svg#icon-heart${isLiked ? '' : '-outlined'}"></use>
-                    </svg>
-                </button>
+                <div class="col-3 col-sm-3 p-1">
+                    <button class="btn btn-outline-success btn-block recipe__btn">
+                        <i class="fa fa-caret-right"></i>
+                    </button>
+                </div>
             </div>
-
-            <div class="recipe__ingredients">
-                <ul class="recipe__ingredient-list">
-                    ${recipe.ingredients.map(el => createIngredient(el)).join('')}
-                </ul> 
-
-                <button class="btn-small recipe__btn recipe__btn--add">
-                    <svg class="search__icon">
-                        <use href="img/icons.svg#icon-shopping-cart"></use>
-                    </svg>
-                    <span>Add to shopping list</span>
-                </button>
+            <div class="row description ">
+                <div class="col-4 col-sm-3 d-none d-sm-block">
+                    <span>4 Servings</span>
+                </div>
+                <div class="col-3 col-sm-3 d-none d-sm-block">
+                    <span>Add to Favorits</span>
+                </div>
+                <div class="col-3 col-sm-3 d-none d-sm-block">
+                    <span>More Info</span>
+                </div>
+                <div class="col-2 col-sm-3 d-none d-sm-block">
+                    <span>Add to the list</span>
+                </div>
             </div>
-
-            <div class="recipe__directions">
-                <h2 class="heading-2">How to cook it</h2>
-                <p class="recipe__directions-text">
-                    This recipe was carefully designed and tested by
-                    <span class="recipe__by">${recipe.author}</span>. Please check out directions at their website.
-                </p>
-                <a class="btn-small recipe__btn" href="${recipe.url}" target="_blank">
-                    <span>Directions</span>
-                    <svg class="search__icon">
-                        <use href="img/icons.svg#icon-triangle-right"></use>
-                    </svg>
-
-                </a>
-            </div>
+        </div>
+        </div>
     `;
     elements.recipe.insertAdjacentHTML('afterbegin', markap);
 }
-export const updateServingsIngerdients = recipe => {
-    //update servings
-    document.querySelector('.recipe__info-data--people').textContent = recipe.servings;
 
-    //update ingredients
-    const countElements = Array.from(document.querySelectorAll('.recipe__count'));
-    countElements.forEach((el, i) => {
-        el.textContent = recipe.ingredients[i].amount;
-    })
-};

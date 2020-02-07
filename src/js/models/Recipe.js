@@ -8,7 +8,7 @@ export default class Recipe {
 
     async getRecipe() {
         try{
-            const res = await axios(`${proxy}https://api.spoonacular.com/recipes/${this.id}/information?apiKey=${key}`);
+            const res = await axios(`https://api.spoonacular.com/recipes/${this.id}/information?apiKey=${key}`);
             this.title=res.data.title;
             this.author=res.data.sourceName;
             this.img=res.data.image;
@@ -17,10 +17,11 @@ export default class Recipe {
             this.time=res.data.readyInMinutes;
             this.servings=res.data.servings;    
         } catch(error) {
-            alert('cant get data');   
+            alert('cant get recipe details');   
         }
     }
 
+    /*
     updateServings (type) {
         //servings
         const newServings = type === 'dec' ? this.servings -1 : this.servings +1;
@@ -32,4 +33,5 @@ export default class Recipe {
         })
         this.servings = newServings
     }
+    */
 }

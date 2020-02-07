@@ -1,5 +1,5 @@
 .container_main {
-  height: 960px;
+  height: 642px;
 }
 
 .separator {
@@ -8,6 +8,10 @@
 }
 
 /*------------------------------------------------------------*/
+
+.container-result{
+  height: 620px;
+}
 
 .container-result a {
   padding: 0.25rem;
@@ -18,6 +22,12 @@
   margin: 0;
   padding: 0;
 }
+.results__list{
+  overflow: auto ;
+  height: 620px;
+  padding: .5rem
+}
+
 .results__fig{
   overflow: hidden;
   height: 5rem;
@@ -51,7 +61,6 @@
 }
 .results__data h4{
   font-size: inherit;
-
 }
 
 .pagination {
@@ -65,15 +74,15 @@
 
 .container-recipe {
   padding: 0;
-  height: 490px;
-  border: 1px solid #333;
+  height: 270px;
 }
 .recipe {
   padding: 0.0rem;
 }
 .recipe__fig {
-  height: 24rem;
+  height: 16rem;
   position: relative; 
+  margin: 0;
 }
 .recipe__fig::before {
   content: '';
@@ -99,7 +108,7 @@
   transform: translate(-50%, -10%) skewY(-6deg);
   color: #fff;
   font-weight: 700;
-  font-size: 2.75rem;
+  font-size: 2.3rem;
   text-transform: uppercase;
   width: 80%;
   line-height: 1.2;
@@ -113,8 +122,11 @@
   display: flex;
   flex-direction: column;
   align-items: center; 
+  height: 270px;
 }
 .recipe__ingredient-list {
+  height: 270px;
+  background-color: #F2EFEE;
   padding: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -122,6 +134,7 @@
   grid-row-gap: 1rem;
   list-style: none;
   margin-bottom: 1rem; 
+  overflow: auto ;
 }
 .recipe__item {
 
@@ -203,4 +216,18 @@ font-size: 0.6rem;
 
 .shopping__description{
 margin: 0;
+}
+
+/******************************************************************************/
+
+.copyrightSection {
+  background-color: #f8f9fa!important;
+  color: rgba(0,0,0,.9);
+  padding: .5rem 1rem;
+  height: 55px;
+}
+
+.copyrightSection p {
+  padding: .3rem;
+  margin: 0.3rem;
 }
