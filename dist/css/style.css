@@ -6,6 +6,17 @@
   margin: 10px;
   padding: 10px
 }
+body{
+  background: linear-gradient(to right,#07a, #0aa);
+  background-size: 100%;
+}
+.logo {
+  color: #07a !important;
+}
+.nav-icon {
+  color: #0aa !important;
+}
+
 
 /*------------------------------------------------------------*/
 

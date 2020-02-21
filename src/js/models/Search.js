@@ -7,7 +7,7 @@ export default class Search {
     }
     async getResults() {
         try {
-            const res = await axios.get(`${proxy}https://api.spoonacular.com/recipes/search?apiKey=${key}&query=${this.query}&number=20`);
+            const res = await axios.get(`${proxy}https://api.spoonacular.com/recipes/search?apiKey=${key}&query=${this.query}&number=10`);
             this.result = res.data.results;
         } catch (error) {
             alert(error);

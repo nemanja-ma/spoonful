@@ -19,16 +19,16 @@
 
     <div class="container mt-0 mt-5 nav-container">
         <nav class="row navbar navbar-light bg-light" >
-            <a class="navbar-brand col-sm-2 ">Spoonful</a>
+            <a class="navbar-brand col-sm-2 logo">Spoonful</a>
             <form class="form-inline col-sm-6 justify-content-center search">
                 <div class="container ">
                     <div class="row ">
                         <input class="form-control col-9 col-sm-7 offset-sm-2 search__field" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-secondary col-3 col-sm-3 my-2 my-sm-0 search__button" type="submit">Search</button>
+                        <button class="btn btn-outline-secondary col-3 col-sm-3 my-2 my-sm-0 search__button " type="submit">Search</button>
                     </div>
                 </div>
             </form>
-            <a class="col-sm-2 d-none d-sm-block"><i class="fa fa-heart ml-5"></i></a>
+            <a class="col-sm-2 d-none d-sm-block"><i class="fa fa-heart ml-5 nav-icon"></i></a>
         </nav>
     </div>
 
@@ -102,8 +102,8 @@
                         <div class="row pl-3 pr-3 recipe__details">
                             <div class="col-3 col-sm-3 p-1">
                                 <div class="recipe__info recipe__info__recipe text-align-center">
-                                    <a class="btn-tiny recipe__info-buttons"> <i class="fa fa-minus"></i> </a>
-                                    <a class="btn-tiny recipe__info-buttons" style="  margin-left: 1rem;"> <i class="fa fa-plus"></i> </a>
+                                    <a class="btn-tiny recipe__info-buttons btn-decrease"> <i class="fa fa-minus"></i> </a>
+                                    <a class="btn-tiny recipe__info-buttons btn-increase" style="  margin-left: 1rem;"> <i class="fa fa-plus"></i> </a>
                                 </div>
                             </div>
                             <div class="col-3 col-sm-3 p-1">
@@ -118,7 +118,7 @@
 
                             </div>
                             <div class="col-3 col-sm-3 p-1">
-                                <button class="btn btn-outline-success btn-block recipe__btn">
+                                <button class="btn btn-outline-success btn-block recipe__btn recipe__btn--add">
                                     <i class="fa fa-caret-right"></i>
                                 </button>
                             </div>

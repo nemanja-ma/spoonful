@@ -38,8 +38,8 @@ export const renderRecipe = (recipe) => {
             <div class="row pl-3 pr-3 recipe__details">
                 <div class="col-3 col-sm-3 p-1">
                     <div class="recipe__info recipe__info__recipe text-align-center">
-                        <a class="btn-tiny recipe__info-buttons"> <i class="fa fa-minus"></i> </a>
-                        <a class="btn-tiny recipe__info-buttons" style="  margin-left: 1rem;"> <i class="fa fa-plus"></i> </a>
+                        <a class="btn-tiny recipe__info-buttons btn-decrease"> <i class="fa fa-minus"></i> </a>
+                        <a class="btn-tiny recipe__info-buttons btn-increase" style="  margin-left: 1rem;"> <i class="fa fa-plus"></i> </a>
                     </div>
                 </div>
                 <div class="col-3 col-sm-3 p-1">
@@ -54,14 +54,14 @@ export const renderRecipe = (recipe) => {
 
                 </div>
                 <div class="col-3 col-sm-3 p-1">
-                    <button class="btn btn-outline-success btn-block recipe__btn">
+                    <button class="btn btn-outline-success btn-block recipe__btn recipe__btn--add">
                         <i class="fa fa-caret-right"></i>
                     </button>
                 </div>
             </div>
             <div class="row description ">
                 <div class="col-4 col-sm-3 d-none d-sm-block">
-                    <span>4 Servings</span>
+                    <span class="recipe__info-data--people">${recipe.servings}</span><span> Servings</span>
                 </div>
                 <div class="col-3 col-sm-3 d-none d-sm-block">
                     <span>Add to Favorits</span>
@@ -79,3 +79,13 @@ export const renderRecipe = (recipe) => {
     elements.recipe.insertAdjacentHTML('afterbegin', markap);
 }
 
+export const updateServingsIngerdients = recipe => {
+    //update servings
+    document.querySelector('.recipe__info-data--people').textContent = recipe.servings;
+
+    //update ingredients
+    const countElements = Array.from(document.querySelectorAll('.recipe__count'));
+    countElements.forEach((el, i) => {
+        el.textContent = recipe.ingredients[i].amount;
+    })
+};
