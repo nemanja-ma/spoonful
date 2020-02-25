@@ -9,6 +9,7 @@ export default class Recipe {
     async getRecipe() {
         try{
             const res = await axios(`https://api.spoonacular.com/recipes/${this.id}/information?apiKey=${key}`);
+            console.log(res)
             this.title=res.data.title;
             this.author=res.data.sourceName;
             this.img=res.data.image;
@@ -29,7 +30,7 @@ export default class Recipe {
         //ingredients
 
         this.ingredients.forEach(ing => {
-            ing.amount *= (newServings/this.servings)
+            ing.amount = Math.round(ing.amount * (newServings/this.servings) * 100) /100
         })
         this.servings = newServings
     }

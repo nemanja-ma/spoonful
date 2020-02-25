@@ -39,7 +39,7 @@ body{
   padding: .5rem
 }
 
-.results__fig{
+.results__fig {
   overflow: hidden;
   height: 5rem;
   backface-visibility: hidden;
@@ -64,23 +64,17 @@ body{
   object-fit: cover;
 }
 
-.results__data {
+.results__data{
   font-size: 0.8rem !important;
   display: inline-block;
   height: 5rem;
   padding: inherit;
 }
-.results__data h4{
+.results__data h4,
+.likes__data h4{
   font-size: inherit;
 }
 
-.pagination {
-  margin: 1rem auto;
-  justify-content: center;
-}
-.pagination a {
-  color: #333;
-}
 /*----------------------------------------------------------*/
 
 .container-recipe {
@@ -228,6 +222,22 @@ font-size: 0.6rem;
 .shopping__description{
 margin: 0;
 }
+
+
+.likes__list{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.likes__list li{
+  padding: 0.5rem;
+  font-size: 0.8rem !important;
+}
+.likes__list li h4 {
+  margin: 0;
+}
+
+
 
 /******************************************************************************/
 

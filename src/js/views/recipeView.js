@@ -15,7 +15,7 @@ let createIngredient = ingredient => `
     </li>
     `; 
 
-export const renderRecipe = (recipe) => {
+export const renderRecipe = (recipe, isLiked) => {
     const markap = `
         <figure class="recipe__fig">
             <img class="recipe__img" src="${recipe.img}" alt="${recipe.title}">
@@ -43,15 +43,12 @@ export const renderRecipe = (recipe) => {
                     </div>
                 </div>
                 <div class="col-3 col-sm-3 p-1">
-                    <button class="btn btn-outline-danger btn-block recipe__love">
+                    <button class="btn ${isLiked ? "btn-danger" : "btn-outline-danger"} btn-block recipe__love">
                         <i class="fa fa-heart"></i>
                     </button>
                 </div>
                 <div class="col-3 col-sm-3 p-1">
-                    <button class="btn btn-outline-secondary btn-block recipe__love" href="${recipe.url}" target="_blank">
-                        <i class="fa fa-info"></i>
-                    </button>
-
+                    <a target="blank" href="${recipe.url}" class="btn btn-outline-secondary btn-block" role="button"><i class="fa fa-info"></i></a>                        
                 </div>
                 <div class="col-3 col-sm-3 p-1">
                     <button class="btn btn-outline-success btn-block recipe__btn recipe__btn--add">
@@ -80,6 +77,7 @@ export const renderRecipe = (recipe) => {
 }
 
 export const updateServingsIngerdients = recipe => {
+    
     //update servings
     document.querySelector('.recipe__info-data--people').textContent = recipe.servings;
 

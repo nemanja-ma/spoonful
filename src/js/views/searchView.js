@@ -29,7 +29,7 @@ const renderRecipe = recipe => {
                     </div>
                     <div class="recipe__info__in">
                         <i class="fa fa-user"></i>
-                        <span class="recipe__info-data recipe__info-data--people">${recipe.servings}</span>
+                        <span class="recipe__info-data">${recipe.servings}</span>
                         <span class="recipe__info-text"> person</span>
                     </div>
                     <div class="recipe__info__in ">
@@ -43,5 +43,6 @@ const renderRecipe = recipe => {
     elements.searchResList.insertAdjacentHTML('afterbegin',markap);
 };
 export const renderResults = (recipes) => {
+
     recipes.forEach(renderRecipe);
 };
